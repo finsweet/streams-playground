@@ -1,0 +1,9 @@
+<script>
+  const isStaging = window.location.origin.includes('webflow.io');
+  const script = document.createElement('script');
+  script.src = isStaging
+    ? 'http://localhost:3000/index.js'
+    : 'https://starter-demo.vercel.app/index.js';
+  script.defer = true;
+  document.head.append(script);
+</script>
