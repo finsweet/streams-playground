@@ -1,28 +1,18 @@
-import {
-  cloneNode,
-  getCurrentBreakpoint,
-  getPublishDate,
-  getSiteId,
-  Interaction,
-  restartWebflow,
-  simulateEvent,
-  TabLinkElement,
-  TABS_CSS_CLASSES,
-} from '@finsweet/ts-utils';
-
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  const tabLinks = document.querySelectorAll<TabLinkElement>(`.${TABS_CSS_CLASSES.tabLink}`);
+  const listElement = document.querySelector('[fs-element="cool-names-list"');
+  const itemTemplate = listElement?.querySelector('[fs-element="cool-list-item"]');
+  if (!listElement || !itemTemplate) {
+    alert('Missing list!');
+    return;
+  }
 
-  simulateEvent(tabLinks[2], 'click');
+  const names = ['Micah', 'Joel', 'Josh', 'Simone'];
 
-  const interaction = new Interaction({ element: tabLinks[2], duration: 500 });
+  for (const name of names) {
+    const newItem = itemTemplate.cloneNode(true);
+    newItem.textContent = name;
 
-  interaction.trigger('first');
-
-  interaction.untilFinished()?.then(() => {
-    console.log('0interaction finished!');
-  });
-
-  console.log({ tabLinks });
+    listElement.append(newItem);
+  }
 });
