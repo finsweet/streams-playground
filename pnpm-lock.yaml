@@ -8,6 +8,7 @@ specifiers:
   '@finsweet/tsconfig': ^1.1.0
   '@playwright/test': ^1.25.0
   '@trivago/prettier-plugin-sort-imports': ^3.3.0
+  '@types/google.maps': ^3.50.3
   '@typescript-eslint/eslint-plugin': ^5.33.0
   '@typescript-eslint/parser': ^5.33.0
   cross-env: ^7.0.3
@@ -28,6 +29,7 @@ devDependencies:
   '@finsweet/tsconfig': 1.1.0
   '@playwright/test': 1.25.0
   '@trivago/prettier-plugin-sort-imports': 3.3.0_prettier@2.7.1
+  '@types/google.maps': 3.50.3
   '@typescript-eslint/eslint-plugin': 5.33.0_njno5y7ry2l2lcmiu4tywxkwnq
   '@typescript-eslint/parser': 5.33.0_qugx7qdu5zevzvxaiqyxfiwquq
   cross-env: 7.0.3
@@ -650,6 +652,10 @@ packages:
       prettier: 2.7.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@types/google.maps/3.50.3:
+    resolution: {integrity: sha512-/enPaasjFzNvdx3uIuz6FjN8qR3l4mRF+ptdwu2JtdqyEjMUT6+VGOYpOZSZLB0vK8Qc2nvoKWICRp3NWEb4Ew==}
     dev: true
 
   /@types/is-ci/3.0.0:

@@ -1,18 +1,55 @@
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  const listElement = document.querySelector('[fs-element="cool-names-list"');
-  const itemTemplate = listElement?.querySelector('[fs-element="cool-list-item"]');
-  if (!listElement || !itemTemplate) {
-    alert('Missing list!');
+  const mapElement = document.querySelector<HTMLElement>('[fs-element="map-target"]');
+
+  if (!mapElement) {
     return;
   }
 
-  const names = ['Micah', 'Joel', 'Josh', 'Simone'];
+  const map = new window.google.maps.Map(mapElement, {
+    zoom: 12,
+    center: { lat: 21.1213393, lng: -86.8842527 },
+  });
 
-  for (const name of names) {
-    const newItem = itemTemplate.cloneNode(true);
-    newItem.textContent = name;
+  const nyButton = document.querySelector<HTMLAnchorElement>('[fs-element="button-ny"]');
 
-    listElement.append(newItem);
+  if (!nyButton) {
+    return;
   }
+
+  nyButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    map.setCenter({
+      lat: 40.6974034,
+      lng: -74.1197616,
+    });
+  });
+
+  const form = document.querySelector<HTMLFormElement>('[fs-element="search-form"]');
+  const input = document.querySelector<HTMLInputElement>('[fs-element="search-input"]');
+  if (!form || !input) {
+    return;
+  }
+
+  // Add autocompletion to the input
+  const autocomplete = new window.google.maps.places.Autocomplete(input, {
+    fields: ['geometry'],
+    types: ['geocode'],
+  });
+
+  // Check when the user submits the form
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const value = autocomplete.getPlace();
+
+    map.setCenter(value.geometry?.location);
+    console.log(value);
+  });
+
+  // Get the input value+
+
+  // Center the map to the user's requested place
 });
