@@ -1,44 +1,51 @@
 lockfileVersion: 5.4
 
-specifiers:
-  '@changesets/changelog-git': ^0.1.12
-  '@changesets/cli': ^2.24.2
-  '@finsweet/eslint-config': ^1.1.5
-  '@finsweet/ts-utils': ^0.33.1
-  '@finsweet/tsconfig': ^1.1.0
-  '@playwright/test': ^1.25.0
-  '@trivago/prettier-plugin-sort-imports': ^3.3.0
-  '@types/google.maps': ^3.50.3
-  '@typescript-eslint/eslint-plugin': ^5.33.0
-  '@typescript-eslint/parser': ^5.33.0
-  cross-env: ^7.0.3
-  esbuild: ^0.15.1
-  eslint: ^8.21.0
-  eslint-config-prettier: ^8.5.0
-  eslint-plugin-prettier: ^4.2.1
-  prettier: ^2.7.1
-  typescript: ^4.7.4
+importers:
 
-dependencies:
-  '@finsweet/ts-utils': 0.33.1
+  .:
+    specifiers:
+      '@changesets/changelog-git': ^0.1.12
+      '@changesets/cli': ^2.24.2
+      '@finsweet/eslint-config': ^1.1.5
+      '@finsweet/ts-utils': ^0.33.1
+      '@finsweet/tsconfig': ^1.1.0
+      '@playwright/test': ^1.25.0
+      '@trivago/prettier-plugin-sort-imports': ^3.3.0
+      '@types/google.maps': ^3.50.3
+      '@typescript-eslint/eslint-plugin': ^5.33.0
+      '@typescript-eslint/parser': ^5.33.0
+      cross-env: ^7.0.3
+      esbuild: ^0.15.1
+      eslint: ^8.21.0
+      eslint-config-prettier: ^8.5.0
+      eslint-plugin-prettier: ^4.2.1
+      prettier: ^2.7.1
+      typescript: ^4.7.4
+    dependencies:
+      '@finsweet/ts-utils': 0.33.1
+    devDependencies:
+      '@changesets/changelog-git': 0.1.12
+      '@changesets/cli': 2.24.2
+      '@finsweet/eslint-config': 1.1.5_6ixyrwbv5c65kq6yykmrcii4y4
+      '@finsweet/tsconfig': 1.1.0
+      '@playwright/test': 1.25.0
+      '@trivago/prettier-plugin-sort-imports': 3.3.0_prettier@2.7.1
+      '@types/google.maps': 3.50.3
+      '@typescript-eslint/eslint-plugin': 5.33.0_njno5y7ry2l2lcmiu4tywxkwnq
+      '@typescript-eslint/parser': 5.33.0_qugx7qdu5zevzvxaiqyxfiwquq
+      cross-env: 7.0.3
+      esbuild: 0.15.1
+      eslint: 8.21.0
+      eslint-config-prettier: 8.5.0_eslint@8.21.0
+      eslint-plugin-prettier: 4.2.1_h62lvancfh4b7r6zn2dgodrh5e
+      prettier: 2.7.1
+      typescript: 4.7.4
 
-devDependencies:
-  '@changesets/changelog-git': 0.1.12
-  '@changesets/cli': 2.24.2
-  '@finsweet/eslint-config': 1.1.5_6ixyrwbv5c65kq6yykmrcii4y4
-  '@finsweet/tsconfig': 1.1.0
-  '@playwright/test': 1.25.0
-  '@trivago/prettier-plugin-sort-imports': 3.3.0_prettier@2.7.1
-  '@types/google.maps': 3.50.3
-  '@typescript-eslint/eslint-plugin': 5.33.0_njno5y7ry2l2lcmiu4tywxkwnq
-  '@typescript-eslint/parser': 5.33.0_qugx7qdu5zevzvxaiqyxfiwquq
-  cross-env: 7.0.3
-  esbuild: 0.15.1
-  eslint: 8.21.0
-  eslint-config-prettier: 8.5.0_eslint@8.21.0
-  eslint-plugin-prettier: 4.2.1_h62lvancfh4b7r6zn2dgodrh5e
-  prettier: 2.7.1
-  typescript: 4.7.4
+  packages/google-maps:
+    specifiers:
+      '@finsweet/ts-utils': ^0.33.1
+    dependencies:
+      '@finsweet/ts-utils': 0.33.1
 
 packages:
 

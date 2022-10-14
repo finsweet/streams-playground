@@ -1,8 +1,8 @@
 {
-  "name": "@fake-client/starter-demo",
-  "version": "1.1.1",
+  "name": "@finsweet/starter-demo",
+  "private": true,
   "description": "Developer starter template for Finsweet projects.",
-  "homepage": "https://github.com/finsweet/developer-starter#readme",
+  "homepage": "https://github.com/finsweet/starter-demo#readme",
   "license": "ISC",
   "keywords": [],
   "author": {
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finsweet/developer-starter.git"
+    "url": "git+https://github.com/finsweet/starter-demo.git"
   },
   "bugs": {
-    "url": "https://github.com/finsweet/developer-starter/issues"
+    "url": "https://github.com/finsweet/starter-demo/issues"
   },
   "type": "module",
   "main": "src/index.ts",
@@ -23,15 +23,14 @@
     "dist"
   ],
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node ./bin/build.js",
-    "build": "cross-env NODE_ENV=production node ./bin/build.js",
-    "lint": "eslint --ignore-path .gitignore ./src && prettier --check ./src",
-    "check": "tsc --noEmit",
-    "format": "prettier --write ./src",
-    "test": "pnpm playwright test",
-    "test:headed": "pnpm playwright test --headed",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "check": "pnpm -r check",
+    "format": "pnpm -r format",
+    "test": "pnpm -r test --workspace-concurrency=1",
+    "test:headed": "pnpm -r test:headed --headed --workspace-concurrency=1",
     "release": "changeset publish",
-    "update": "pnpm update -i -L"
+    "update": "pnpm update -i -L -r"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.1.12",
