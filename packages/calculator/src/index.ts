@@ -6,6 +6,7 @@ window.Webflow.push(() => {
   const resultInterest = document.querySelector('[fs-element="result-interest"]');
   const resultTotal = document.querySelector('[fs-element="result-total"]');
   const resultMonthly = document.querySelector('[fs-element="result-monthly"]');
+
   if (!form || !resultLoan || !resultInterest || !resultTotal || !resultMonthly) return;
 
   // Listen for form submission events
@@ -29,8 +30,8 @@ window.Webflow.push(() => {
 
     // Display the results
     resultLoan.textContent = amount.toString();
-    resultInterest.textContent = totalInterest.toString();
-    resultTotal.textContent = total.toString();
-    resultMonthly.textContent = monthlyPayment.toString();
+    resultInterest.textContent = totalInterest.toFixed(2);
+    resultTotal.textContent = total.toFixed(2);
+    resultMonthly.textContent = monthlyPayment.toFixed(2);
   });
 });
