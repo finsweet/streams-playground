@@ -1,13 +1,12 @@
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // Query the elements
-  const form = document.querySelector<HTMLFormElement>('[fs-element="form"]');
-  const resultLoan = document.querySelector('[fs-element="result-loan"]');
-  const resultInterest = document.querySelector('[fs-element="result-interest"]');
-  const resultTotal = document.querySelector('[fs-element="result-total"]');
-  const resultMonthly = document.querySelector('[fs-element="result-monthly"]');
 
-  if (!form || !resultLoan || !resultInterest || !resultTotal || !resultMonthly) return;
+  const form = document.querySelector<HTMLFormElement>('[fs-element="form"]');
+  const resultBudget = document.querySelector('[fs-element="result-budget"]');
+  const resultPlan = document.querySelector('[fs-element="result-plan"]');
+
+  if (!form || !resultBudget || !resultPlan) return;
 
   // Listen for form submission events
   form.addEventListener('submit', (e) => {
@@ -28,6 +27,7 @@ window.Webflow.push(() => {
     const total = Number(amount) + totalInterest;
     const monthlyPayment = total / 12;
 
+    //    NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(number));
     // Display the results
     resultLoan.textContent = amount.toString();
     resultInterest.textContent = totalInterest.toFixed(2);
