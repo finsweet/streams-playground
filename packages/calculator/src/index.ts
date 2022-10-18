@@ -1,37 +1,41 @@
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // Query the elements
-
   const form = document.querySelector<HTMLFormElement>('[fs-element="form"]');
   const resultBudget = document.querySelector('[fs-element="result-budget"]');
   const resultPlan = document.querySelector('[fs-element="result-plan"]');
 
+  // Set up currency display
+  const currencyFormat = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+
+    // These options are needed to round to whole numbers if that's what you want.
+    minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+    maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+  });
+
+  // TODO: Need to set up calculations for final price
+
   if (!form || !resultBudget || !resultPlan) return;
 
-  // Listen for form submission events
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     e.stopPropagation();
 
     // Get the data
     const formData = new FormData(form);
-    const amount = formData.get('amount');
-    const interest = formData.get('interest');
-    const term = formData.get('term');
 
-    if (!amount || !interest || !term) return;
+    const operatingBudget = formData.get('operatingBudget');
+    const pricePlan = formData.get('pricePlan');
 
-    // Perform calculations
-    // I = P * r * T
-    const totalInterest = Number(amount) * (Number(interest) / 100) * Number(term);
-    const total = Number(amount) + totalInterest;
-    const monthlyPayment = total / 12;
+    if (!operatingBudget || !pricePlan) return;
 
-    //    NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(number));
+    const totalOperatingBudget = currencyFormat.format(Number(operatingBudget));
+    const totalPricePlan = String(pricePlan);
+
     // Display the results
-    resultLoan.textContent = amount.toString();
-    resultInterest.textContent = totalInterest.toFixed(2);
-    resultTotal.textContent = total.toFixed(2);
-    resultMonthly.textContent = monthlyPayment.toFixed(2);
+    resultBudget.textContent = totalOperatingBudget.toString();
+    resultPlan.textContent = totalPricePlan.toString();
   });
 });
