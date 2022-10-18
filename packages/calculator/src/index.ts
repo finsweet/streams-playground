@@ -1,3 +1,5 @@
+import { currencyFormat } from './utils/currency';
+
 window.Webflow ||= [];
 window.Webflow.push(() => {
   // Query the elements
@@ -29,9 +31,9 @@ window.Webflow.push(() => {
     const monthlyPayment = total / 12;
 
     // Display the results
-    resultLoan.textContent = amount.toString();
-    resultInterest.textContent = totalInterest.toFixed(2);
-    resultTotal.textContent = total.toFixed(2);
-    resultMonthly.textContent = monthlyPayment.toFixed(2);
+    resultLoan.textContent = currencyFormat.format(Number(amount));
+    resultInterest.textContent = currencyFormat.format(totalInterest);
+    resultTotal.textContent = currencyFormat.format(total);
+    resultMonthly.textContent = currencyFormat.format(monthlyPayment);
   });
 });
