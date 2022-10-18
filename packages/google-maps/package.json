@@ -35,5 +35,8 @@
   },
   "dependencies": {
     "@finsweet/ts-utils": "^0.33.1"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.50.4"
   }
 }

@@ -44,9 +44,11 @@ window.Webflow.push(() => {
     e.stopPropagation();
 
     const value = autocomplete.getPlace();
-
-    map.setCenter(value.geometry?.location);
     console.log(value);
+
+    if (value.geometry?.location) {
+      map.setCenter(value.geometry.location);
+    }
   });
 
   // Get the input value+
