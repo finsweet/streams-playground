@@ -34,9 +34,9 @@
     "update": "pnpm update -i -L"
   },
   "dependencies": {
-    "@finsweet/ts-utils": "^0.33.1"
+    "@finsweet/ts-utils": "^0.37.3"
   },
   "devDependencies": {
-    "@types/google.maps": "^3.50.4"
+    "@types/google.maps": "^3.51.1"
   }
 }

@@ -33,23 +33,23 @@
     "update": "pnpm update -i -L -r"
   },
   "devDependencies": {
-    "@changesets/changelog-git": "^0.1.12",
-    "@changesets/cli": "^2.24.2",
-    "@finsweet/eslint-config": "^1.1.5",
-    "@finsweet/tsconfig": "^1.1.0",
-    "@playwright/test": "^1.25.0",
-    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
+    "@changesets/changelog-git": "^0.1.14",
+    "@changesets/cli": "^2.26.0",
+    "@finsweet/eslint-config": "^2.0.2",
+    "@finsweet/tsconfig": "^1.2.0",
+    "@playwright/test": "^1.30.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.15.1",
-    "eslint": "^8.21.0",
-    "eslint-config-prettier": "^8.5.0",
+    "esbuild": "^0.17.7",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "typescript": "^4.7.4"
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@finsweet/ts-utils": "^0.33.1"
+    "@finsweet/ts-utils": "^0.37.3"
   }
 }

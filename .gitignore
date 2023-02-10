@@ -25,3 +25,4 @@ typings/
 .env
 
 # Production files
+dist
