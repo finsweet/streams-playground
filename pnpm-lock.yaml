@@ -45,6 +45,20 @@ importers:
     dependencies:
       '@finsweet/ts-utils': 0.37.3
 
+  packages/fullcalendar:
+    specifiers:
+      '@finsweet/ts-utils': ^0.37.3
+      '@fullcalendar/core': ^6.1.4
+      '@fullcalendar/daygrid': ^6.1.4
+      '@fullcalendar/list': ^6.1.4
+      '@fullcalendar/timegrid': ^6.1.4
+    dependencies:
+      '@finsweet/ts-utils': 0.37.3
+      '@fullcalendar/core': 6.1.4
+      '@fullcalendar/daygrid': 6.1.4_@fullcalendar+core@6.1.4
+      '@fullcalendar/list': 6.1.4_@fullcalendar+core@6.1.4
+      '@fullcalendar/timegrid': 6.1.4_@fullcalendar+core@6.1.4
+
   packages/google-maps:
     specifiers:
       '@finsweet/ts-utils': ^0.37.3
@@ -512,6 +526,37 @@ packages:
   /@finsweet/tsconfig/1.2.0:
     resolution: {integrity: sha512-Wq9Pz1Z/8aWLmJPms/P37kYQrAh1iNpHv0MMrekYitmuJ6MMFjhROQaZI+JfJkXicqng7vZHCrF0C+SN55be2Q==}
     dev: true
+
+  /@fullcalendar/core/6.1.4:
+    resolution: {integrity: sha512-ZDD0Owv0LezAk14nsRNaOc9nbowItGmT0mnjOhEw+L6B8P5eads8yYaNA9itn70MWoOjiAG8xqD7Yk1iJGxqgQ==}
+    dependencies:
+      preact: 10.12.1
+    dev: false
+
+  /@fullcalendar/daygrid/6.1.4_@fullcalendar+core@6.1.4:
+    resolution: {integrity: sha512-X0QWEiA/hT8GYiQzmXt9DlZTWaQbNtBHBXGtaMNcVXbGHDCzLoWTHrde/jABGfr/i2+d9sLUO4oTtwz2HVpNtQ==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+    dependencies:
+      '@fullcalendar/core': 6.1.4
+    dev: false
+
+  /@fullcalendar/list/6.1.4_@fullcalendar+core@6.1.4:
+    resolution: {integrity: sha512-RY2fE9J7ckzhKtvHOWhlI2FnVEBC4Z9ZlgRBE2nQekX2+THt+3KnZtOQxuYGnGi30NBKx794YsXeIc6/Lnl0Ww==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+    dependencies:
+      '@fullcalendar/core': 6.1.4
+    dev: false
+
+  /@fullcalendar/timegrid/6.1.4_@fullcalendar+core@6.1.4:
+    resolution: {integrity: sha512-B2/levLKW0CyDQru75JeuASpCZml5W8sINCwVTstxxhjKmNBG3F5qvSX12DDrTdga/ySYObNNP1pKDwavKk/JQ==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.4
+    dependencies:
+      '@fullcalendar/core': 6.1.4
+      '@fullcalendar/daygrid': 6.1.4_@fullcalendar+core@6.1.4
+    dev: false
 
   /@humanwhocodes/config-array/0.11.8:
     resolution: {integrity: sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g==}
@@ -2198,6 +2243,10 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
     dev: true
+
+  /preact/10.12.1:
+    resolution: {integrity: sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==}
+    dev: false
 
   /preferred-pm/3.0.3:
     resolution: {integrity: sha512-+wZgbxNES/KlJs9q40F/1sfOd/j7f1O9JaHcW5Dsn3aUUOZg3L2bjpVUcKV2jvtElYfoTuQiNeMfQJ4kwUAhCQ==}
